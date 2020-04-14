@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<Survey>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+            <th>AnswerOne</th>
+            <th>AnswerTwo</th>
+            <th>AnswerThree</th>
+            <th>AnswerFour</th>
+            <th>AnswerFive</th>
+            <th>Rating</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model == null)
+        {
+            <tr>
+                <td colspan="7" class="text-center">No Model Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var p in Model)
+            {
+    <tr>
+        <td>@p.AnswerOne</td>
+        <td>@p.AnswerTwo</td>
+        <td>@p.AnswerThree</td>
+        <td>@p.AnswerFour</td>
+        <td>@p.AnswerFive</td>
+        <td>
+            >@ViewData["rating"]
+        </td>
+    </tr>
+
+            }
+        }
+    </tbody>
+</table>
+
